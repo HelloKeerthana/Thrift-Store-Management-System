@@ -86,14 +86,18 @@ ID: 101, Name: Jacket, Price: $50.00, Quantity: 20
 Enter your choice: 4
 Enter Item ID to buy: 101
 Enter Quantity to buy: 2
+**--- Bill ---**
 
---- Bill ---
-Item: Jacket
-Quantity Purchased: 2
-Unit Price: $50.00
-Total Amount: $100.00
+**Item: Jacket**
+
+**Quantity Purchased: 2**
+
+**Unit Price: $50.00**
+
+**Total Amount: $100.00**
+
 ---------------
-Thank you for your purchase!
+**Thank you for your purchase!**
 
 Enter your choice: 5
 Total Revenue: $100.00
