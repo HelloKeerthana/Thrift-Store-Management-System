@@ -1,188 +1,123 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thrift Store Management System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
+<h1>Thrift Store Management System</h1>
 
-        h1 {
-            text-align: center;
-            color: #4CAF50;
-        }
+<h2>Overview</h2>
+<p>This project implements a Thrift Store Management System in C++. The system allows users to:</p>
+<ul>
+    <li>Manage an inventory of items.</li>
+    <li>Handle purchases.</li>
+    <li>Track total revenue.</li>
+</ul>
+<p>It provides functionalities such as:</p>
+<ul>
+    <li>Listing items.</li>
+    <li>Adding items with unique IDs.</li>
+    <li>Removing items.</li>
+    <li>Buying items with proper billing.</li>
+</ul>
 
-        h2 {
-            color: #555;
-        }
+<h2>Features</h2>
+<h3>Add Items</h3>
+<ul>
+    <li>Add new items to the inventory with unique IDs.</li>
+</ul>
 
-        .section {
-            margin-bottom: 20px;
-        }
+<h3>Remove Items</h3>
+<ul>
+    <li>Remove items from the inventory by specifying their ID.</li>
+</ul>
 
-        .code-box {
-            background-color: #eee;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: monospace;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
+<h3>List Items</h3>
+<ul>
+    <li>View all items currently in the inventory.</li>
+</ul>
 
-        .list-items, .usage {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+<h3>Buy Items</h3>
+<ul>
+    <li>Purchase items, generate a bill, update inventory quantities, and track total revenue.</li>
+</ul>
 
-        .list-items ul, .usage ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
+<h3>Show Total Revenue</h3>
+<ul>
+    <li>Displays the total revenue generated from all purchases.</li>
+</ul>
 
-        .list-items li, .usage li {
-            padding: 8px;
-            font-size: 16px;
-            border-bottom: 1px solid #ddd;
-        }
+<h2>Functionalities</h2>
 
-        .list-items li:last-child, .usage li:last-child {
-            border-bottom: none;
-        }
+<h3>Inventory Management</h3>
+<ul>
+    <li>Items in the inventory have the following properties:</li>
+    <ul>
+        <li>ID (unique)</li>
+        <li>Name</li>
+        <li>Price</li>
+        <li>Quantity</li>
+    </ul>
+    <li>Prevents duplicate IDs during item addition.</li>
+</ul>
 
-        .btn {
-            padding: 10px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-        }
+<h3>Transaction Handling</h3>
+<ul>
+    <li>Allows customers to purchase items.</li>
+    <li>Checks for sufficient stock before completing a purchase.</li>
+    <li>Generates an itemized bill for each transaction.</li>
+    <li>Updates inventory quantities after a purchase.</li>
+    <li>Tracks total revenue.</li>
+</ul>
 
-        .btn:hover {
-            background-color: #45a049;
-        }
+<h2>Usage Instructions</h2>
 
-        .sample-interaction {
-            background-color: #f9f9f9;
-            border-left: 5px solid #4CAF50;
-            padding: 15px;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
+<h3>Menu Options</h3>
+<ul>
+    <li>List Items</li>
+    <li>Add Item</li>
+    <li>Remove Item</li>
+    <li>Buy Item</li>
+    <li>Show Total Revenue</li>
+    <li>Exit</li>
+</ul>
 
-    <h1>Thrift Store Management System</h1>
+<h3>Sample Interaction</h3>
+<pre>
+Thrift Store Management System
+1. List Items
+2. Add Item
+3. Remove Item
+4. Buy Item
+5. Show Total Revenue
+0. Exit
 
-    <div class="section">
-        <h2>Overview</h2>
-        <p>This project implements a Thrift Store Management System in C++. The system allows users to:</p>
-        <ul>
-            <li>Manage an inventory of items.</li>
-            <li>Handle purchases.</li>
-            <li>Track total revenue.</li>
-        </ul>
-        <p>It provides functionalities such as:</p>
-        <ul>
-            <li>Listing items.</li>
-            <li>Adding items with unique IDs.</li>
-            <li>Removing items.</li>
-            <li>Buying items with proper billing.</li>
-        </ul>
-    </div>
+Enter your choice: 2
+Enter Item ID: 101
+Enter Item Name: Jacket
+Enter Item Price: $50.00
+Enter Item Quantity: 20
+Item added successfully.
 
-    <div class="section list-items">
-        <h2>Functionalities</h2>
-        <p>Inventory Management</p>
-        <ul>
-            <li>Items in the inventory have the following properties:
-                <ul>
-                    <li>ID (unique)</li>
-                    <li>Name</li>
-                    <li>Price</li>
-                    <li>Quantity</li>
-                </ul>
-            </li>
-            <li>Prevents duplicate IDs during item addition.</li>
-        </ul>
+Enter your choice: 1
+Current Items in Inventory:
+ID: 101, Name: Jacket, Price: $50.00, Quantity: 20
 
-        <p>Transaction Handling</p>
-        <ul>
-            <li>Allows customers to purchase items.</li>
-            <li>Checks for sufficient stock before completing a purchase.</li>
-            <li>Generates an itemized bill for each transaction.</li>
-            <li>Updates inventory quantities after a purchase.</li>
-            <li>Tracks total revenue.</li>
-        </ul>
-    </div>
+Enter your choice: 4
+Enter Item ID to buy: 101
+Enter Quantity to buy: 2
 
-    <div class="section usage">
-        <h2>Usage Instructions</h2>
-        <p>Menu Options:</p>
-        <ul>
-            <li>List Items</li>
-            <li>Add Item</li>
-            <li>Remove Item</li>
-            <li>Buy Item</li>
-            <li>Show Total Revenue</li>
-            <li>Exit</li>
-        </ul>
+--- Bill ---
+Item: Jacket
+Quantity Purchased: 2
+Unit Price: $50.00
+Total Amount: $100.00
+---------------
 
-        <p>Sample Interaction:</p>
-        <div class="sample-interaction">
-            <p><strong>Thrift Store Management System</strong></p>
-            <p>1. List Items</p>
-            <p>2. Add Item</p>
-            <p>3. Remove Item</p>
-            <p>4. Buy Item</p>
-            <p>5. Show Total Revenue</p>
-            <p>0. Exit</p>
-            <p><strong>Enter your choice:</strong> 2</p>
-            <p>Enter Item ID: 101</p>
-            <p>Enter Item Name: Jacket</p>
-            <p>Enter Item Price: $50.00</p>
-            <p>Enter Item Quantity: 20</p>
-            <p>Item added successfully.</p>
-            <p><strong>Enter your choice:</strong> 1</p>
-            <p><strong>Current Items in Inventory:</strong></p>
-            <p>ID: 101, Name: Jacket, Price: $50.00, Quantity: 20</p>
-            <p><strong>Enter your choice:</strong> 4</p>
-            <p>Enter Item ID to buy: 101</p>
-            <p>Enter Quantity to buy: 2</p>
-            <p><strong>--- Bill ---</strong></p>
-            <p>Item: Jacket</p>
-            <p>Quantity Purchased: 2</p>
-            <p>Unit Price: $50.00</p>
-            <p>Total Amount: $100.00</p>
-            <p>---------------</p>
-            <p>Thank you for your purchase!</p>
-            <p><strong>Enter your choice:</strong> 5</p>
-            <p>Total Revenue: $100.00</p>
-        </div>
-    </div>
+Thank you for your purchase!
 
-    <div class="section">
-        <h2>File Structure</h2>
-        <ul>
-            <li>Main Program: Contains the main() function and user interaction menu.</li>
-            <li>Item Class: Represents individual items with attributes and methods.</li>
-            <li>Inventory Class: Manages the collection of items and inventory operations.</li>
-            <li>Transaction Class: Handles purchase operations and revenue tracking.</li>
-        </ul>
-    </div>
+Enter your choice: 5
+Total Revenue: $100.00
+</pre>
 
-    <div class="section">
-        <button class="btn">Start Application</button>
-    </div>
-
-</body>
-</html>
+<h2>File Structure</h2>
+<ul>
+    <li>Main Program: Contains the main() function and user interaction menu.</li>
+    <li>Item Class: Represents individual items with attributes and methods.</li>
+    <li>Inventory Class: Manages the collection of items and inventory operations.</li>
+    <li>Transaction Class: Handles purchase operations and revenue tracking.</li>
+</ul>
