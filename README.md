@@ -1,7 +1,7 @@
-Thrift Store Management System
-Overview
-This project implements a Thrift Store Management System in C++.
-The system allows users to:
+**#Thrift Store Management System**
+**##Overview**
+**This project implements a Thrift Store Management System in C++.**
+**The system allows users to:**
 
 Manage an inventory of items.
 Handle purchases.
@@ -18,7 +18,8 @@ Remove Items: Remove items from the inventory by specifying their ID.
 List Items: View all items currently in the inventory.
 Buy Items: Purchase items, generate a bill, and update inventory quantities.
 Total Revenue: Track the total revenue generated from purchases.
-Functionalities
+
+**Functionalities**
 Inventory Management
 Items in the inventory have the following properties:
 ID (unique)
@@ -32,17 +33,19 @@ Checks for sufficient stock before completing a purchase.
 Generates an itemized bill for each transaction.
 Updates inventory quantities after a purchase.
 Tracks total revenue.
-Usage Instructions
-Menu Options
+
+**Usage Instructions**
+**Menu Options**
+
 List Items: Displays all items in the inventory.
 Add Item: Prompts for item details (ID, name, price, quantity) and adds it to the inventory. Ensures the ID is unique.
 Remove Item: Removes an item by its ID if it exists.
 Buy Item: Prompts for item ID and quantity, generates a bill, updates inventory, and adds to the total revenue.
 Show Total Revenue: Displays the total revenue generated from all purchases.
 Exit: Exits the program.
-Sample Interaction
-plaintext
-Copy code
+
+**Sample Interaction**
+
 Thrift Store Management System  
 1. List Items  
 2. Add Item  
@@ -50,6 +53,7 @@ Thrift Store Management System
 4. Buy Item  
 5. Show Total Revenue  
 0. Exit  
+
 Enter your choice: 2  
 Enter Item ID: 101  
 Enter Item Name: Jacket  
@@ -74,11 +78,13 @@ Enter Quantity to buy: 2
 **Thank you for your purchase!**  
 
 Enter your choice: 5  
-Total Revenue: $100.00  
+Total Revenue: $100.00 
 
 
-File Structure
+**File Structure**
+
 Main Program: Contains the main() function and user interaction menu.
 Item Class: Represents individual items with attributes and methods.
 Inventory Class: Manages the collection of items and inventory operations.
 Transaction Class: Handles purchase operations and revenue tracking.
+
