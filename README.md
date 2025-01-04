@@ -1,5 +1,7 @@
-**#Thrift Store Management System**
-**##Overview**
+<h1>**Thrift Store Management System**</h1>
+
+**Overview**
+
 **This project implements a Thrift Store Management System in C++.**
 **The system allows users to:**
 
